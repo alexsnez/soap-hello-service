@@ -13,12 +13,12 @@ import org.springframework.core.io.ClassPathResource;
 @Configuration
 public class WebServiceConfig {
     @Bean
-    public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(ApplicationContext context) {
-        MessageDispatcherServlet servlet = new MessageDispatcherServlet();
-        servlet.setApplicationContext(context);
-        servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean<>(servlet, "/ws/*");
-    }
+public ServletRegistrationBean<MessageDispatcherServlet> customMessageDispatcherServlet(ApplicationContext context) {
+    MessageDispatcherServlet servlet = new MessageDispatcherServlet();
+    servlet.setApplicationContext(context);
+    servlet.setTransformWsdlLocations(true);
+    return new ServletRegistrationBean<>(servlet, "/ws/*");
+}
 
     @Bean(name = "hello")
     public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema helloSchema) {
