@@ -3,12 +3,12 @@ package com.example.soap.model;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "HelloRequest", namespace = "http://learnwebservices.com/services/hello")
-public class HelloRequest {
-    private String name;
+@XmlRootElement(name = "HelloResponse", namespace = "http://learnwebservices.com/services/hello")
+public class HelloResponse {
+    private String message;
 
-    @XmlElement(name = "Name")
-    public String getName() { return name; }
+    @XmlElement(name = "Message")
+    public String getMessage() { return message; }
 
-    public void setName(String name) { this.name = name; }
+    public void setMessage(String message) { this.message = message; }
 }
