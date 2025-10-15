@@ -1,14 +1,14 @@
 package com.example.soap.model;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "HelloResponse", namespace = "http://learnwebservices.com/services/hello")
-public class HelloResponse {
-    private String message;
+@XmlRootElement(name = "HelloRequest", namespace = "http://learnwebservices.com/services/hello")
+public class HelloRequest {
+    private String name;
 
-    @XmlElement(name = "Message")
-    public String getMessage() { return message; }
+    @XmlElement(name = "Name")
+    public String getName() { return name; }
 
-    public void setMessage(String message) { this.message = message; }
+    public void setName(String name) { this.name = name; }
 }
